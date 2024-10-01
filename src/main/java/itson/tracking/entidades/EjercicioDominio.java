@@ -1,5 +1,4 @@
 package itson.tracking.entidades;
-import org.bson.Document;
 
 /**
  *  Clase que representa un ejercicio de un plan de entrenamiento
@@ -58,13 +57,4 @@ public class EjercicioDominio {
         this.duracion = duracion;
     }
 
-    /**
-     * Método que convierte un objeto EjercicioDominio a un documento de MongoDB
-     * @return Document
-     */
-    public Document toDocument() {
-        return new Document("nombre", nombre)
-            .append("tipo", tipo)
-            .append("duracion", duracion);
-    }
 }

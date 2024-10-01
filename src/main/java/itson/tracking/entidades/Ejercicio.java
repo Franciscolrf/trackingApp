@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package itson.tracking.entidades;
-import org.bson.Document;
 
 /**
  *  Clase que representa un ejercicio de una rutina de un plan de entrenamiento
@@ -47,12 +46,5 @@ public class Ejercicio {
         this.estado = estado;
     }
 
-    /**
-     * Método que convierte un objeto Ejercicio a un documento de MongoDB
-     * @return Document
-     */
-    public Document toDocument() {
-        return new Document("ejercicio", ejercicioDominio.toDocument())
-            .append("estado", estado);
-    }
+
 }

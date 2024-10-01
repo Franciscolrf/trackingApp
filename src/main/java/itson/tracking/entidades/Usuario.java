@@ -1,7 +1,5 @@
 package itson.tracking.entidades;
 
-import org.bson.Document;
-
 /**
  * Clase que representa a un usuario de la aplicación
  *  @author David Acosta Fajardo - Raul Alejandro Sauceda Rayos - Francisco de Jesús López Ruiz / ITSON
@@ -104,18 +102,4 @@ public class Usuario {
         this.planEntrenamiento = planEntrenamiento;
     }
 
-
-
-    /**
-     * Método que convierte un objeto de tipo Usuario a un documento de MongoDB
-     * @return Document
-     */ 
-    public Document toDocument() {
-        return new Document("nombre", nombre)
-            .append("nomUsuario", nomUsuario)
-            .append("edad", edad)
-            .append("peso", peso)
-            .append("estatura", estatura)
-            .append("plan", planEntrenamiento.toDocument());
-    }
 }

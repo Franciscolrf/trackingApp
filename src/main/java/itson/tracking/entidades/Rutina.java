@@ -3,9 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package itson.tracking.entidades;
-import org.bson.Document;
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  *  Clase que representa una rutina de un plan de entrenamiento
@@ -31,15 +29,4 @@ public class Rutina {
         return ejercicios;
     }
 
-    /**
-     * Método que convierte un objeto Rutina a un documento de MongoDB
-     * @return Document
-     */
-    public Document toDocument() {
-        List<Document> documentosEjercicios = new ArrayList<>();
-        for (Ejercicio ejercicio : ejercicios) {
-            documentosEjercicios.add(ejercicio.toDocument());
-        }
-        return new Document("ejercicios", documentosEjercicios);
-    }
 }

@@ -4,8 +4,9 @@
 
 package itson.tracking.test;
 
+import com.mongodb.Mongo;
+
 import itson.tracking.conexion.MongoDBConnection;
-import itson.tracking.entidades.EjercicioDominio;
 
 /**
  *
@@ -15,5 +16,7 @@ public class test {
 
     public static void main(String[] args) {
 
+        MongoDBConnection conexion = new MongoDBConnection();
+        conexion.close();
     }
 }

@@ -7,8 +7,8 @@ public class MongoDBConnection {
     private MongoClient mongoClient;
     private MongoDatabase database;
 
-    public MongoDBConnection(String uri) {
-        mongoClient = MongoClients.create(uri);
+    public MongoDBConnection( ) {
+        mongoClient = MongoClients.create("mongodb://localhost:27017/");
         database = mongoClient.getDatabase("appTracking");
     }
 

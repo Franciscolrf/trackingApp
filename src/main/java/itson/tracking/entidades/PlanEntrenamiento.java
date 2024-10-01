@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package itson.tracking.entidades;
-import org.bson.Document;
+import java.util.Date;
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  *  Clase que representa un plan de entrenamiento
@@ -13,8 +12,8 @@ import java.util.ArrayList;
  */
 public class PlanEntrenamiento {
     private List<Dia> dias;
-    private String fechaInicial;
-    private String fechaFinal;
+    private Date fechaInicial;
+    private Date fechaFinal;
 
     /**
      * Constructor de la clase PlanEntrenamiento con todos los atributos
@@ -22,7 +21,7 @@ public class PlanEntrenamiento {
      * @param fechaInicial
      * @param fechaFinal
      */
-    public PlanEntrenamiento(List<Dia> dias, String fechaInicial, String fechaFinal) {
+    public PlanEntrenamiento(List<Dia> dias, Date fechaInicial, Date fechaFinal) {
         this.dias = dias;
         this.fechaInicial = fechaInicial;
         this.fechaFinal = fechaFinal;
@@ -39,38 +38,24 @@ public class PlanEntrenamiento {
     }
 
 
-    public String getFechaInicial() {
+    public Date getFechaInicial() {
         return fechaInicial;
     }
 
 
-    public void setFechaInicial(String fechaInicial) {
+    public void setFechaInicial(Date fechaInicial) {
         this.fechaInicial = fechaInicial;
     }
 
 
-    public String getFechaFinal() {
+    public Date getFechaFinal() {
         return fechaFinal;
     }
 
 
-    public void setFechaFinal(String fechaFinal) {
+    public void setFechaFinal(Date fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
 
-    /**
-     * Convierte el plan de entrenamiento a un documento de MongoDB
-     * @return Document
-     */
-    public Document toDocument() {
-        List<Document> documentosDias = new ArrayList<>();
-        for (Dia dia : dias) {
-            documentosDias.add(dia.toDocument());
-        }
-
-        return new Document("dias", documentosDias)
-            .append("fechaInicial", fechaInicial)
-            .append("fechaFinal", fechaFinal);
-    }
 }
